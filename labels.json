@@ -1,0 +1,37 @@
+[
+  {
+    "name": "jules:ready",
+    "color": "0E8A16",
+    "description": "Ready for Jules to pick up"
+  },
+  {
+    "name": "jules:in-progress",
+    "color": "FBCA04",
+    "description": "Jules is actively working on this"
+  },
+  {
+    "name": "jules:review",
+    "color": "1D76DB",
+    "description": "Jules opened a PR, awaiting human review"
+  },
+  {
+    "name": "jules:blocked",
+    "color": "D93F0B",
+    "description": "Jules hit ambiguity or a failure, needs human input"
+  },
+  {
+    "name": "jules:claude-code",
+    "color": "5319E7",
+    "description": "Reserved for Claude Code, Jules will not pick up"
+  },
+  {
+    "name": "priority:high",
+    "color": "B60205",
+    "description": "Dispatch ahead of normal queue"
+  },
+  {
+    "name": "priority:low",
+    "color": "C5DEF5",
+    "description": "Background work, no rush"
+  }
+]

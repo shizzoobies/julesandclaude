@@ -1,0 +1,77 @@
+# .jules/config.yml
+# Per-repo configuration for Google Jules.
+# Rendered from this template by runbooks/onboard-repo.ps1.
+# Placeholders: {{BASE_BRANCH}}
+
+version: 1
+
+# Pickup rules
+triggers:
+  labels:
+    - jules:ready
+  exclude_labels:
+    - jules:claude-code
+    - jules:blocked
+    - wip
+    - draft
+
+# Branch naming
+branch:
+  prefix: jules/
+  base: {{BASE_BRANCH}}
+
+# Safety: files Jules must never touch
+denylist:
+  - ".env"
+  - ".env.*"
+  - "secrets/**"
+  - "**/*.key"
+  - "**/*.pem"
+  - "**/credentials.json"
+  - ".github/workflows/**"
+  - "wrangler.toml"
+  - "vercel.json"
+  - "package-lock.json"
+
+# Files Jules should always read before planning
+context_files:
+  - AGENTS.md
+  - README.md
+  - package.json
+
+# Task limits
+limits:
+  max_files_changed: 25
+  max_lines_changed: 1000
+
+# PR behavior
+pr:
+  draft: false
+  reviewers:
+    - shizzoobies
+  labels_on_open:
+    - jules:in-progress
+  labels_on_ready:
+    - jules:review
+  template: |
+    ## What changed
+
+    {{summary}}
+
+    ## How to verify
+
+    {{verification_steps}}
+
+    ## Files touched
+
+    {{file_list}}
+
+    ---
+    Resolves #{{issue_number}}
+    Read AGENTS.md for style rules followed.
+
+# Audio changelog (optional Jules feature)
+audio_changelog:
+  enabled: false
+  cadence: weekly
+  day: friday

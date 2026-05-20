@@ -1,0 +1,15 @@
+# OS files
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Local logs and temp
+*.log
+*.tmp
+*.ps1.bak
+
+# Archive for old dispatches (created on demand)
+archive/

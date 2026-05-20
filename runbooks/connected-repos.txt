@@ -1,0 +1,14 @@
+# Repos under Jules + Claude orchestration.
+# Lines starting with # are ignored. Format: owner/repo (one per line).
+
+# Phase 1 (live)
+shizzoobies/kandadesigners.com
+shizzoobies/daily-prompt-generator
+
+# Phase 2 (pending, do not onboard without explicit confirmation)
+# shizzoobies/pbjsa.com
+# shizzoobies/mbsdoc.com
+# shizzoobies/computersolutionskeystone.com
+
+# The orchestration repo itself does not get a Jules scaffold.
+# shizzoobies/julesandclaude
