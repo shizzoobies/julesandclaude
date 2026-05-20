@@ -40,7 +40,7 @@ if ($pathParts -notcontains $OrchPath) {
 $ghCmd = Get-Command gh -ErrorAction SilentlyContinue
 if ($ghCmd) {
   Write-Host "gh CLI found: $($ghCmd.Source)" -ForegroundColor Green
-  try { & gh auth status -ErrorAction Stop 2>&1 | Out-Null } catch {}
+  & gh auth status 2>$null | Out-Null
   if ($LASTEXITCODE -eq 0) {
     Write-Host "gh is authenticated" -ForegroundColor Green
   } else {

@@ -69,7 +69,7 @@ if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
   exit 1
 }
 
-& gh auth status 2>&1 | Out-Null
+& gh auth status 2>$null | Out-Null
 if ($LASTEXITCODE -ne 0) {
   Write-Error "gh is not authenticated. Run: gh auth login"
   exit 1
