@@ -51,15 +51,16 @@ gh issue list --search "label:jules:in-progress" --limit 50
 
 ### Dispatch a task to Jules
 
+The dispatch script wraps `jules new --repo <owner/repo> "<prompt>"` under the hood. Note that the target repo must already be connected at https://jules.google.com/.
+
 ```powershell
 jules-dispatch.ps1 `
   -Repo shizzoobies/kandadesigners.com `
-  -Title "Update README with current tech stack" `
-  -Body "Refresh the README to reflect Cloudflare Pages and GitHub Actions stack. Keep it brief, no em dashes." `
-  -Priority normal
+  -Task "Update README with current tech stack" `
+  -Dod "Refresh the README to reflect Cloudflare Pages and GitHub Actions stack. Keep it brief, no em dashes."
 ```
 
-The script files a labeled issue, caps active Jules tasks at 5 per repo, and appends an entry to `STATUS.md`.
+The script files the task, caps active Jules tasks at 5 per repo, and appends an entry to `STATUS.md`.
 
 ## Architecture
 
